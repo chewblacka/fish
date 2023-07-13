@@ -1,4 +1,4 @@
-# zsh
+# Fish shell
 My fish shell dotfiles directory
 
 ## Install
