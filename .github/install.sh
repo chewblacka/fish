@@ -9,5 +9,5 @@
 echo "Script to install my fish files"
 echo "First we source fisher and use it to install fish_plugins"
 cd "$HOME/.config/fish/"
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install fish_plugins
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update
 echo "Done!"
