@@ -1,0 +1,11 @@
+# Ignore everything
+*
+# Except ...
+# ... files we want to include:
+!.gitignore
+!config.fish
+!fish_plugins
+!.github/
+!.github/install.sh
+!.github/README.md
+
