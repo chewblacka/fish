@@ -58,7 +58,7 @@ alias rm='rm -i'
 
 # Tumbleweed
 if [ $DISTRO = "TW" ]
-    alias cat = bat
+    # alias cat = bat
 end
 
 # NixOS
