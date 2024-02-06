@@ -53,7 +53,6 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 
-
 #### DISTRO SPECIFIC ####
 
 # Tumbleweed
@@ -74,9 +73,6 @@ end
 # sudoedit
 # whitespace
 
-# Function helper aliases
-alias noargs="not count $argv > /dev/null"
-
 function distro
     # What distro are we on?
     set os_file "/etc/os-release"
@@ -90,11 +86,11 @@ function distro
 end
 
 function which
+    # A which function for Fish shell and NixOS
     if not count $argv > /dev/null
         command which
         return
     end
-    # A which function for Fish shell and NixOS
     # First check to see if its a Fish alias
     if grep "alias $argv[1]=" "$HOME/.config/fish/config.fish" >/dev/null 2>&1 
         echo "alias defined in fish.config:"
