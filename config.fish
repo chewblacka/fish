@@ -72,6 +72,7 @@ end
 # nix
 # sudoedit
 # whitespace
+# tide_mark
 
 function distro
     # What distro are we on?
