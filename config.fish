@@ -5,7 +5,7 @@ end
 function fish_greeting
     tide_mark 312222211412
     if not set -q DISTRO ; distro ; end
-    printf "Welcome to Fish Shell. Running on "; set_color yellow; printf "$DISTRO $OS_VER"; set_color normal
+    printf "Welcome to Fish Shell. Running on "; set_color yellow; printf "$DISTRO ($OS_VER)"; set_color normal
     echo
 end
 
