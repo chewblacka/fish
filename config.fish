@@ -5,7 +5,7 @@ end
 function fish_greeting
     tide_mark 312222211412
     if not set -q DISTRO ; distro ; end
-    printf "Welcome to Fish Shell. Running on "; set_color yellow; printf $DISTRO; set_color normal
+    printf "Welcome to Fish Shell. Running on "; set_color yellow; printf "$DISTRO $OS_VER"; set_color normal
     echo
 end
 
@@ -56,12 +56,12 @@ alias rm='rm -i'
 #### DISTRO SPECIFIC ####
 
 # Tumbleweed
-if [ $DISTRO = "TW" ]
+if test "$DISTRO" = "TW"
     # alias cat = bat
 end
 
 # NixOS
-if [ $DISTRO = "NixOS" ]
+if test "$DISTRO" = "NixOS"
 end
 
 
@@ -78,10 +78,11 @@ function distro
     # What distro are we on?
     set os_file "/etc/os-release"
     if test -f $os_file
+        set -g OS_VER $(grep VERSION_ID /etc/os-release | sed 's/VERSION_ID="\([^"]*\)"/\1/')
         if grep -q "NixOS" $os_file
-            set -U DISTRO "NixOS"
-        else if grep -q "Tumbleweed" $os_file
-            set -U DISTRO "TW"
+            set -g DISTRO "NixOS"
+        else if  grep -q "Tumbleweed" $os_file
+            set -g DISTRO "TW"
         end
     end
 end
