@@ -1,9 +1,9 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    tide_mark 312222211412
 end
 
 function fish_greeting
+    tide_mark 312222211412
     if not set -q DISTRO ; distro ; end
     printf "Welcome to Fish Shell. Running on "; set_color yellow; printf $DISTRO; set_color normal
     echo
@@ -213,6 +213,9 @@ end
 
 function tide_mark --argument mark
     # Function to declaratively set Tide settings
+    if not set -q tide_config
+        set -U tide_config $mark
+    end
     if test $tide_config != $mark
         if _tide_check $mark
             echo "$mark y" | tide configure > /dev/null 2>&1 
