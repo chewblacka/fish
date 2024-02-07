@@ -5,7 +5,6 @@
 !.gitignore
 !config.fish
 !fish_plugins
-!tide_mark.sh
 !.github/
 !.github/install.sh
 !.github/README.md
